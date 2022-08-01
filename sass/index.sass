@@ -1,0 +1,406 @@
+@import "reset"
+@import "variables"
+html 
+    font-family: 'Montserrat', sans-serif
+    font-size: 16px
+    scroll-behavior: smooth
+.container 
+    max-width: 2560px
+    padding: 0
+    margin: 0 auto
+
+.container1 
+    max-width: 1920px
+    padding: 0 160px
+    margin: 0 auto
+
+.container2 
+    max-width: 1920px
+    padding: 0 100px
+    margin: 0 auto
+.bg-gradient 
+    background: rgb(50,50,100)
+    background: -moz-linear-gradient(231deg, rgba(50,50,100,1) 0%, rgba(50,50,100,1) 50%, rgba(100,62,114,1) 100%)
+    background: -webkit-linear-gradient(231deg, rgba(50,50,100,1) 0%, rgba(50,50,100,1) 50%, rgba(100,62,114,1) 100%)
+    background: linear-gradient(231deg, rgba(50,50,100,1) 0%, rgba(50,50,100,1) 50%, rgba(100,62,114,1) 100%)
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#323264",endColorstr="#643e72",GradientType=1)
+    border-radius: 0 0 1% 1% 
+    box-shadow: 0px 17px 0px -7px #cacadb, 0px 39px 1px -17px #e7e7f2
+.header 
+    position: relative
+    height: 92vh
+    &__team 
+        display: flex
+        justify-content: space-between
+        align-items: flex-start
+        color: white    
+        &-logo 
+            padding-top: 50px
+            display: flex
+            z-index: 1
+        &-h 
+            display: flex
+            justify-content: center
+            margin: 0 auto
+            img 
+                position: absolute
+                padding-left: 400px
+                height: 95vh
+                width: auto
+            h1
+                top: 50%
+                left: 39%
+                position: absolute
+                display: flex
+                align-items: center
+                font-size: 1.9rem
+                font-weight: 700
+                justify-content: center
+        &-right 
+            display: flex
+            align-items: flex-end
+            flex-direction: column
+            z-index: 1
+        
+            &-group
+                display: flex
+                align-items: center
+                padding-top: 55px
+            
+                &-leng a:last-of-type
+                    padding-right: 11px
+                    margin-right: 6px
+                &-leng a 
+                    border: 1px solid transparent
+                    padding: 6px 7px
+                    border-radius: 8px
+                    transition: all ease-in-out 0.3s
+                
+                &-leng a:hover 
+                    border: 1px solid $accent-pink
+                    background-color: $accent-pink
+                
+                &-leng ul
+                    display: flex
+                
+                    a 
+                        text-decoration: none
+                        color: white
+                        font-weight: 700
+                        font-size: 0.825rem
+                        padding-left: 11px
+                    
+                &-dotted 
+                    border-top: 6px dotted white
+                    padding: 0 5px
+                
+                &-number a 
+                    padding-right: 5px
+                    font-weight: 700
+                    font-size: 1rem
+                    color: white
+                    text-decoration: none
+                &-city 
+                    padding-right: 5px
+                    font-size: 1rem
+                
+                &-facebook 
+                    display: block
+                
+            &-list 
+                display: flex
+                padding-top: 19px
+            
+                ul 
+                    display: flex
+                
+                a 
+                    text-decoration: none
+                    color: white
+                    padding-left: 15px
+                    font-weight: 700
+                    font-size: 1rem
+                    transition: all ease-in-out 0.3s
+                a:hover 
+                    color: $accent-pink
+                
+    &__arrow  
+        position: absolute
+        left: 0 
+        right: 0
+        bottom: 0 
+        text-align: center
+        i
+            border: 1px solid white
+            border-radius: 50px
+            padding: 9px 10px
+        .fa-solid 
+            color: white
+
+
+.main
+    &__nav
+        display: flex
+        justify-content: space-around
+        margin-top: 90px
+        align-items: center
+        padding: 0 43px 85px
+        &-left 
+            padding-left: 130px
+            a
+                display: flex
+                flex-direction: column
+                font-size: 2.4rem
+                font-weight: 700
+                color: #B3B3BA
+                text-decoration: none
+                line-height: 46px
+                padding-bottom: 30px
+                text-align: right
+                transition: all ease-in-out 0.3s
+        &-left a:hover
+            color: #F0145A 
+            background: none
+        &-left li:first-of-type
+            display: flex
+            flex-direction: column
+            font-size: 1.85rem
+            font-weight: 700
+            background: linear-gradient(90.13deg, #EF8080 0.84%, #F0145A 99.96%)
+            -webkit-background-clip: text
+            -webkit-text-fill-color: transparent
+            text-decoration: none
+            transition: all ease-in-out 0.3s
+        &-border
+            border-right: 4px solid $grey-mainnav
+            padding-top: 30px
+            height: 303px
+            padding-left: 50px
+        &-right
+            display: flex
+            flex-direction: column
+            color: $grey-mainnav
+            padding-left: 50px
+            &-title
+                font-size: 1.625rem
+                font-weight: 700
+                padding-bottom: 30px
+            &-desc
+                font-size: 1.1rem
+                max-width: 861px
+    &__service
+        display: flex
+        flex-direction: column
+        &-services h3
+            font-size: 0.85rem
+            color: $grey-text
+            transition: all ease-in-out 0.3s
+            padding-bottom: 10px
+        &-services h3:hover
+                color: $accent-pink
+        &-title h2
+            font-size: 2.4rem
+            font-weight: 700
+            color: #F0145A
+            padding-bottom: 60px
+        &-group
+            display: flex
+            justify-content: space-between
+            flex-wrap: wrap
+            &-item
+                display: flex
+                flex-direction: column
+                max-width: 33%
+                padding: 0 30px 87px 0
+                flex-wrap: wrap
+                &-item:nth-of-type(3n)
+                    padding-right: 0   
+                &-foto img
+                        max-width: 92px
+                        height: auto
+                        padding-bottom: 30px
+                &-title
+                    font-size: 1.4rem
+                    color: $active-regular
+                    padding-bottom: 15px
+                &-desc
+                    font-size: 1rem
+                    color: $grey-mainnav
+                    max-width: 493px
+    
+    &__slider
+        display: flex
+        justify-content: center
+        align-items: center
+        background-color: $grey-bg
+        margin-top: 60px
+        border: 1px solid transparent
+        border-radius: 20px
+        &-man
+            height: auto
+            border-radius: 1% 0 0 1%
+            img
+                width: 400px
+                height: 298px
+                object-fit: cover 
+                border-radius: 4% 0 0 4%  
+        &-card
+            display: flex
+            flex-direction: column
+            padding-left: 30px
+            padding-right: 30px
+            &-team
+                font-size: 0.85rem
+                color: $active-regular
+                padding-bottom: 5px
+                padding-top: 17px
+                &:hover
+                    color:$accent-pink
+            &-desc h2
+                font-size: 2.4rem
+                font-weight: 700
+                background: linear-gradient(90.13deg, #F0145A 0.84%, #EF8080 99.96%)
+                -webkit-background-clip: text
+                -webkit-text-fill-color: transparent
+                background-clip: text
+                text-fill-color: transparent
+                padding-bottom: 60px
+                max-width: 1140px
+                line-height: 46.32px
+            &-name
+                color: $grey-text
+                font-size: 1rem
+                font-weight: 700
+                padding-bottom: 6px
+            &-position
+                color: $grey-text
+                font-size: 0.85rem
+                font-weight: 400
+                padding-bottom: 30px
+    &__group
+        padding-top: 60px
+        margin-bottom: 60px
+        &-title
+            text-transform: uppercase
+            font-size: 0.85rem
+            font-weight: 700
+            color: $main-blue
+            text-align: center
+            padding-bottom: 30px    
+        &-sponsor
+            display: flex
+            flex-wrap: wrap
+            justify-content: center
+            width: 100%
+            &-item
+                display: flex
+                justify-content: center
+                align-items: center
+                width: 25%
+                height: 120px
+                &:nth-of-type(1)
+                    border-radius: 10px 0 0 0
+                &:nth-of-type(4)
+                    border-radius: 0 10px 0 0
+                &:nth-of-type(9)
+                    border-radius: 0 0 0 10px
+                &:nth-of-type(12)
+                    border-radius: 0 0 10px 0
+                img 
+                    max-width: 200px
+    &__articles
+        display: flex
+        flex-direction: column
+        padding-top: 30px
+        &-publication
+            font-size: 0.825rem
+            font-weight: 700
+            padding-bottom: 10px
+            color: $active-regular
+            transition: all ease-in-out 0.3s
+            text-transform: uppercase
+            &:hover
+                color:$accent-pink                
+        &-title            
+            font-size: 2.4rem
+            font-weight: 700
+            background: linear-gradient(90.13deg, #F0145A 0.84%, #EF8080 99.96%)
+            -webkit-background-clip: text
+            -webkit-text-fill-color: transparent
+            background-clip: text
+            text-fill-color: transparent
+            padding-bottom: 30px            
+        &-card
+            display: flex
+            justify-content: space-between
+            padding-bottom: 30px
+            &-group
+                display: flex
+                flex-direction: column
+                background-color: white
+                border-radius: 8px
+                border: 1px solid transparent
+                &-wrapper
+                    padding: 30px
+                &-foto
+                &-text
+                    font-weight: 700
+                    font-size: 1rem
+                    line-height: 19.5px
+                    padding-bottom: 15px
+                    max-width: 453px
+                    color:$active-regular
+                &-data
+                    letter-spacing: 1px
+                    font-size: 0.725rem
+                    font-weight: 700
+                    color: $grey-text
+                    padding-bottom: 15px
+                    text-transform: uppercase
+                &-border
+                    color: $grey-separator
+                    border-top: 4px solid $grey-separator
+                    padding-bottom: 15px
+                    max-width: 453px
+                &-desc
+                    font-size: 0.825rem
+                    font-weight: 400
+                    line-height: 22px
+                    overflow: hidden
+                    max-width: 453px
+    &__border
+        border-top: 2px solid $grey-separator
+        padding-bottom: 30px
+.footer
+    display: flex
+    flex-direction: column
+    &__nav
+        display: flex
+        justify-content: space-between
+        &-left
+            display: flex
+            align-items: center
+            &-city
+                font-size: 1rem
+                font-weight: 400
+                line-height: 19.5px
+            &-dotted
+                border-top: 6px dotted $grey-text
+            &-map
+                letter-spacing: 1px
+                font-weight: 700
+                line-height: 14.63px
+                font-size: 0.7rem
+                text-transform: uppercase
+                a
+                    color: $active-regular
+                    text-decoration: none
+        &-right
+            display: flex
+            align-items: flex-end
+            a
+                color:$grey-text
+                text-decoration: none
+                font-size: 1rem
+                line-height: 19.5px
+                font-weight: 400
