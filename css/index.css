@@ -195,8 +195,7 @@ html {
   padding-left: 11px;
 }
 .header__team-right-group-dotted {
-  border-top: 6px dotted white;
-  padding: 0 5px;
+  padding: 0 10px 7px;
 }
 .header__team-right-group-number a {
   padding-right: 5px;
@@ -537,6 +536,7 @@ html {
 .footer__nav-left {
   display: flex;
   align-items: center;
+  justify-content: flex-start;
 }
 .footer__nav-left-city {
   font-size: 1rem;
@@ -544,7 +544,7 @@ html {
   line-height: 19.5px;
 }
 .footer__nav-left-dotted {
-  border-top: 6px dotted #B3B3BA;
+  padding: 0 10px 7px;
 }
 .footer__nav-left-map {
   letter-spacing: 1px;
@@ -567,4 +567,66 @@ html {
   font-size: 1rem;
   line-height: 19.5px;
   font-weight: 400;
+}
+.footer__bottom {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.footer__bottom-dotted {
+  padding: 0 10px 7px;
+}
+.footer__bottom-phone {
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 19.5px;
+  color: #46466E;
+}
+.footer__bottom-mail {
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 19.5px;
+}
+.footer__bottom-mail a {
+  color: #24A3FF;
+  text-decoration: none;
+}
+
+.popup {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3294117647);
+  top: 0;
+  left: 0;
+  opasity: 0;
+  z-index: 1;
+  overflow: hidden;
+}
+.popup:target {
+  opasity: 1;
+  visability: visible;
+}
+.popup__body {
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.popup__body-content {
+  background-color: #fff;
+  color: black;
+  padding: 20px;
+}
+.popup__body-content-close {
+  right: 10px;
+  top: 10px;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #000;
+  text-decoration: none;
+}
+
+:root.dark-theme, :host-context(html.dark-theme) {
+  overflow: hidden;
 }
