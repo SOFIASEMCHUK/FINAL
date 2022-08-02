@@ -336,7 +336,10 @@ html
                 border: 1px solid transparent
                 &-wrapper
                     padding: 30px
-                &-foto
+                &-foto 
+                    img
+                        max-width: 513px
+                        height: auto
                 &-text
                     font-weight: 700
                     font-size: 1rem
@@ -371,6 +374,7 @@ html
     &__nav
         display: flex
         justify-content: space-between
+        padding-bottom: 21px
         &-left
             display: flex
             align-items: center
@@ -403,6 +407,7 @@ html
         display: flex
         justify-content: flex-start
         align-items: center
+        padding-bottom: 30px
         &-dotted
             padding: 0 10px 7px
         &-phone
@@ -424,12 +429,18 @@ html
     background-color: #00000054
     top: 0
     left: 0
-    opasity: 0
     z-index: 1
-    overflow: hidden
+    opasity: 0
+    visibility: hidden
     &:target
         opasity: 1
-        visability: visible
+        visibility: visible
+    &__area
+        position: absolute
+        width: 100%
+        height: 100%
+        top: 0
+        left: 0
     &__body
         min-height: 100%
         display: flex
@@ -438,13 +449,16 @@ html
         &-content
             background-color: #fff
             color: black
-            padding: 20px
+            mx-width: 800px
+            padding: 30px 20px
+            position: relative
             &-close
+                position: absolute
                 right: 10px
                 top: 10px
                 font-size: 1.4rem
                 font-weight: 700
                 color: #000
                 text-decoration: none
-:root.dark-theme, :host-context(html.dark-theme)
-    overflow: hidden       
+:root.dark-theme, :host-context(html.dark-theme) 
+    overflow: hidden  
