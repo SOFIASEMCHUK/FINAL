@@ -1,23 +1,22 @@
 @import "reset"
 @import "variables"
+
 html 
     font-family: 'Montserrat', sans-serif
     font-size: 16px
     scroll-behavior: smooth
-.container 
-    max-width: 2560px
-    padding: 0
-    margin: 0 auto
-
 .container1 
     max-width: 1920px
     padding: 0 160px
     margin: 0 auto
-
+    @media screen and (max-width: 1700px)
+        padding: 0 60px
 .container2 
     max-width: 1920px
     padding: 0 100px
     margin: 0 auto
+    @media screen and (max-width: 1700px)
+        padding: 0
 .bg-gradient 
     background: rgb(50,50,100)
     background: -moz-linear-gradient(231deg, rgba(50,50,100,1) 0%, rgba(50,50,100,1) 50%, rgba(100,62,114,1) 100%)
@@ -48,14 +47,20 @@ html
                 height: 95vh
                 width: auto
             h1
-                top: 50%
-                left: 39%
+                height: 96vh
+                left: 38%
                 position: absolute
                 display: flex
                 align-items: center
                 font-size: 1.9rem
                 font-weight: 700
                 justify-content: center
+                @media screen and (min-width: 2200px)
+                    left: 36%
+                @media screen and (max-width: 1600px)
+                    left: 35%
+                @media screen and (max-width: 1024px)
+                    left: 33%
         &-right 
             display: flex
             align-items: flex-end
@@ -128,8 +133,14 @@ html
             border: 1px solid white
             border-radius: 50px
             padding: 9px 10px
+            transition: all ease-in-out 0.3s
+            &:hover
+                border-color: $accent-pink
         .fa-solid 
             color: white
+            transition: all ease-in-out 0.3s
+            &:hover
+                color: $accent-pink
 
 
 .main
@@ -139,8 +150,14 @@ html
         margin-top: 90px
         align-items: center
         padding: 0 43px 85px
+        @media screen and (max-width: 1200px)
+            padding: 0 0px 85px
         &-left 
             padding-left: 130px
+            @media screen and (max-width: 1880px)
+                padding-left: 60px
+            @media screen and (max-width: 1500px)
+                padding-left: 0
             a
                 display: flex
                 flex-direction: column
@@ -152,6 +169,8 @@ html
                 padding-bottom: 30px
                 text-align: right
                 transition: all ease-in-out 0.3s
+            &-tab
+
         &-left a:hover
             color: #F0145A 
             background: none
@@ -175,13 +194,23 @@ html
             flex-direction: column
             color: $grey-mainnav
             padding-left: 50px
-            &-title
-                font-size: 1.625rem
-                font-weight: 700
-                padding-bottom: 30px
-            &-desc
-                font-size: 1.1rem
-                max-width: 861px
+            @media screen and (max-width: 1300px)
+                max-width: 405px
+            &-tab
+                display: none
+                &:target
+                    display: block
+                &-title
+                    font-size: 1.625rem
+                    font-weight: 700
+                    padding-bottom: 30px
+                &-desc
+                    font-size: 1.1rem
+                    max-width: 861px
+                    @media screen and (max-width: 1880px)
+                        max-width: 700px
+                    @media screen and (max-width: 1500px)
+                        max-width: 581px
     &__service
         display: flex
         flex-direction: column
@@ -204,7 +233,7 @@ html
             &-item
                 display: flex
                 flex-direction: column
-                max-width: 33%
+                max-width: 31%
                 padding: 0 30px 87px 0
                 flex-wrap: wrap
                 &-item:nth-of-type(3n)
@@ -217,10 +246,19 @@ html
                     font-size: 1.4rem
                     color: $active-regular
                     padding-bottom: 15px
+                    @media screen and (max-width: 1170px)
+                        max-width: 250px
                 &-desc
                     font-size: 1rem
                     color: $grey-mainnav
                     max-width: 493px
+                    line-height: 26px
+                    @media screen and (max-width: 1450px)
+                        max-width: 350px
+                    @media screen and (max-width: 1250px)
+                        max-width: 300px
+                    @media screen and (max-width: 1170px)
+                        max-width: 250px
     
     &__slider
         display: flex
@@ -238,6 +276,13 @@ html
                 height: 298px
                 object-fit: cover 
                 border-radius: 4% 0 0 4%  
+                @media screen and (max-width: 1530px)
+                    width: 400px
+                    height: 344px
+                @media screen and (max-width: 1415px)
+                    width: 400px
+                    height: 528px
+                    object-fit: cover 
         &-card
             display: flex
             flex-direction: column
@@ -274,6 +319,8 @@ html
     &__group
         padding-top: 60px
         margin-bottom: 60px
+        @media screen and (max-width: 1700px)
+            margin-bottom: 0
         &-title
             text-transform: uppercase
             font-size: 0.85rem
@@ -294,12 +341,20 @@ html
                 height: 120px
                 &:nth-of-type(1)
                     border-radius: 10px 0 0 0
+                    @media screen and (max-width: 1700px)
+                        border-radius: 0 
                 &:nth-of-type(4)
                     border-radius: 0 10px 0 0
+                    @media screen and (max-width: 1700px)
+                        border-radius: 0
                 &:nth-of-type(9)
                     border-radius: 0 0 0 10px
+                    @media screen and (max-width: 1700px)
+                        border-radius: 0
                 &:nth-of-type(12)
                     border-radius: 0 0 10px 0
+                    @media screen and (max-width: 1700px)
+                        border-radius: 0
                 img 
                     max-width: 200px
     &__articles
@@ -328,18 +383,41 @@ html
             display: flex
             justify-content: space-between
             padding-bottom: 30px
+            flex-wrap: wrap
             &-group
                 display: flex
                 flex-direction: column
                 background-color: white
                 border-radius: 8px
                 border: 1px solid transparent
+                margin-bottom: 30px
+                @media screen and (max-width: 1000px)
+                    &:nth-of-type(3)
+                        max-width: 648px
+                        display: flex
+                        justify-content: center
                 &-wrapper
                     padding: 30px
-                &-foto 
-                    img
-                        max-width: 513px
-                        height: auto
+                &-foto img
+                    max-width: 513px
+                    height: auto
+                    @media screen and (max-width: 1900px)    
+                        max-width: 450px 
+                    @media screen and (max-width: 1700px)
+                        max-width: 420px
+                    @media screen and (max-width: 1450px)
+                        max-width: 320px
+                        height: 200px
+                        object-fit: cover 
+                    @media screen and (max-width: 1250px)
+                        max-width: 281px
+                        height: 200px
+                        object-fit: cover 
+                    @media screen and (max-width: 1000px)
+                        &:nth-of-type(3)
+                            max-width: 648px
+                            height: 200px
+                            object-fit: cover 
                 &-text
                     font-weight: 700
                     font-size: 1rem
@@ -347,6 +425,13 @@ html
                     padding-bottom: 15px
                     max-width: 453px
                     color:$active-regular
+                    @media screen and (max-width: 1900px)    
+                        max-width: 390px 
+                    @media screen and (max-width: 1700px)
+                        max-width: 360px
+                    @media screen and (max-width: 1450px)
+                        max-width: 220px
+                        
                 &-data
                     letter-spacing: 1px
                     font-size: 0.725rem
@@ -359,12 +444,24 @@ html
                     border-top: 4px solid $grey-separator
                     padding-bottom: 15px
                     max-width: 453px
+                    @media screen and (max-width: 1900px)    
+                        max-width: 390px 
+                    @media screen and (max-width: 1700px)
+                        max-width: 360px
+                    @media screen and (max-width: 1450px)
+                        max-width: 220px
                 &-desc
                     font-size: 0.825rem
                     font-weight: 400
                     line-height: 22px
                     overflow: hidden
                     max-width: 453px
+                    @media screen and (max-width: 1900px)    
+                        max-width: 390px 
+                    @media screen and (max-width: 1700px)
+                        max-width: 360px
+                    @media screen and (max-width: 1450px)
+                        max-width: 220px
     &__border
         border-top: 2px solid $grey-separator
         padding-bottom: 30px
@@ -394,6 +491,9 @@ html
                 a
                     color: $active-regular
                     text-decoration: none
+                    transition: all ease-in-out 0.3s
+                    &:hover
+                        color:$accent-pink
         &-right
             display: flex
             align-items: flex-end
