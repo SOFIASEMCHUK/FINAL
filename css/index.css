@@ -297,7 +297,7 @@ html {
     padding-left: 0;
   }
 }
-.main__nav-left a {
+.main__nav-left-tab {
   display: flex;
   flex-direction: column;
   font-size: 2.4rem;
@@ -309,11 +309,11 @@ html {
   text-align: right;
   transition: all ease-in-out 0.3s;
 }
-.main__nav-left a:hover {
+.main__nav-left-tab:hover {
   color: #F0145A;
   background: none;
 }
-.main__nav-left li:first-of-type {
+.main__nav-left-tab:first-of-type {
   display: flex;
   flex-direction: column;
   font-size: 1.85rem;
@@ -340,12 +340,6 @@ html {
   .main__nav-right {
     max-width: 405px;
   }
-}
-.main__nav-right-tab {
-  display: none;
-}
-.main__nav-right-tab:target {
-  display: block;
 }
 .main__nav-right-tab-title {
   font-size: 1.625rem;
@@ -809,51 +803,9 @@ html {
   text-decoration: none;
 }
 
-.popup {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.3294117647);
-  top: 0;
-  left: 0;
-  z-index: 1;
-  opasity: 0;
-  visibility: hidden;
+.content {
+  display: none;
 }
-.popup:target {
-  opasity: 1;
-  visibility: visible;
-}
-.popup__area {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-}
-.popup__body {
-  min-height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.popup__body-content {
-  background-color: #fff;
-  color: black;
-  mx-width: 800px;
-  padding: 30px 20px;
-  position: relative;
-}
-.popup__body-content-close {
-  position: absolute;
-  right: 10px;
-  top: 10px;
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: #000;
-  text-decoration: none;
-}
-
-:root.dark-theme, :host-context(html.dark-theme) {
-  overflow: hidden;
+.content.active {
+  display: block;
 }

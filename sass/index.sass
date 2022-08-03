@@ -158,7 +158,7 @@ html
                 padding-left: 60px
             @media screen and (max-width: 1500px)
                 padding-left: 0
-            a
+            &-tab
                 display: flex
                 flex-direction: column
                 font-size: 2.4rem
@@ -169,21 +169,19 @@ html
                 padding-bottom: 30px
                 text-align: right
                 transition: all ease-in-out 0.3s
-            &-tab
-
-        &-left a:hover
-            color: #F0145A 
-            background: none
-        &-left li:first-of-type
-            display: flex
-            flex-direction: column
-            font-size: 1.85rem
-            font-weight: 700
-            background: linear-gradient(90.13deg, #EF8080 0.84%, #F0145A 99.96%)
-            -webkit-background-clip: text
-            -webkit-text-fill-color: transparent
-            text-decoration: none
-            transition: all ease-in-out 0.3s
+                &:hover
+                    color: #F0145A 
+                    background: none
+                &:first-of-type
+                    display: flex
+                    flex-direction: column
+                    font-size: 1.85rem
+                    font-weight: 700
+                    background: linear-gradient(90.13deg, #EF8080 0.84%, #F0145A 99.96%)
+                    -webkit-background-clip: text
+                    -webkit-text-fill-color: transparent
+                    text-decoration: none
+                    transition: all ease-in-out 0.3s
         &-border
             border-right: 4px solid $grey-mainnav
             padding-top: 30px
@@ -197,9 +195,6 @@ html
             @media screen and (max-width: 1300px)
                 max-width: 405px
             &-tab
-                display: none
-                &:target
-                    display: block
                 &-title
                     font-size: 1.625rem
                     font-weight: 700
@@ -211,6 +206,7 @@ html
                         max-width: 700px
                     @media screen and (max-width: 1500px)
                         max-width: 581px
+
     &__service
         display: flex
         flex-direction: column
@@ -522,43 +518,7 @@ html
             a
                 color: $active-regular
                 text-decoration: none
-.popup
-    position: fixed
-    width: 100%
-    height: 100%
-    background-color: #00000054
-    top: 0
-    left: 0
-    z-index: 1
-    opasity: 0
-    visibility: hidden
-    &:target
-        opasity: 1
-        visibility: visible
-    &__area
-        position: absolute
-        width: 100%
-        height: 100%
-        top: 0
-        left: 0
-    &__body
-        min-height: 100%
-        display: flex
-        align-items: center
-        justify-content: center
-        &-content
-            background-color: #fff
-            color: black
-            mx-width: 800px
-            padding: 30px 20px
-            position: relative
-            &-close
-                position: absolute
-                right: 10px
-                top: 10px
-                font-size: 1.4rem
-                font-weight: 700
-                color: #000
-                text-decoration: none
-:root.dark-theme, :host-context(html.dark-theme) 
-    overflow: hidden  
+.content 
+    display: none
+    &.active 
+        display: block
