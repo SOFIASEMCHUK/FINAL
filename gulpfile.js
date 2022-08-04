@@ -4,6 +4,9 @@ const sass = require('gulp-sass')(require('sass'));
 
 gulp.task('sass', function(done) {
     gulp.src("sass/*.sass")
+        .pipe(sass().on('error', function (e) {
+            console.log(e);
+        }))
         .pipe(sass())
         .pipe(gulp.dest("css"))
         .pipe(browserSync.stream());

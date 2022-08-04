@@ -5,6 +5,7 @@ html
     font-family: 'Montserrat', sans-serif
     font-size: 16px
     scroll-behavior: smooth
+    overflow-x: hidden
 .container1 
     max-width: 1920px
     padding: 0 160px
@@ -32,7 +33,9 @@ html
         display: flex
         justify-content: space-between
         align-items: flex-start
-        color: white    
+        color: white  
+        @media screen and (max-width: 850px)
+            max-width: 648px  
         &-logo 
             padding-top: 50px
             display: flex
@@ -57,6 +60,7 @@ html
                 justify-content: center
                 @media screen and (min-width: 2200px)
                     left: 36%
+                    font-size: 2.5rem
                 @media screen and (max-width: 1600px)
                     left: 35%
                 @media screen and (max-width: 1024px)
@@ -148,10 +152,13 @@ html
         display: flex
         justify-content: space-around
         margin-top: 90px
-        align-items: center
         padding: 0 43px 85px
+        align-items: center
         @media screen and (max-width: 1200px)
             padding: 0 0px 85px
+        @media screen and (max-width: 1000px)
+            flex-direction: column
+            align-items: none
         &-left 
             padding-left: 130px
             @media screen and (max-width: 1880px)
@@ -166,16 +173,19 @@ html
                 color: #B3B3BA
                 text-decoration: none
                 line-height: 46px
-                padding-bottom: 30px
+                padding: 0 15px 10px 15px
                 text-align: right
                 transition: all ease-in-out 0.3s
+                @media screen and (max-width: 1000px)
+                    flex-direction: row
+                    white-space: nowrap
                 &:hover
                     color: #F0145A 
                     background: none
                 &:first-of-type
                     display: flex
                     flex-direction: column
-                    font-size: 1.85rem
+                    font-size: 2.4rem
                     font-weight: 700
                     background: linear-gradient(90.13deg, #EF8080 0.84%, #F0145A 99.96%)
                     -webkit-background-clip: text
@@ -187,11 +197,19 @@ html
             padding-top: 30px
             height: 303px
             padding-left: 50px
+            @media screen and (max-width: 1000px)
+                border-top: 4px solid $grey-mainnav
+                border-right: none
+                width: 648px
+                margin-top: 60px
+                height: 0
+                padding-top: 60px
         &-right
             display: flex
             flex-direction: column
             color: $grey-mainnav
             padding-left: 50px
+            margin: 0 auto
             @media screen and (max-width: 1300px)
                 max-width: 405px
             &-tab
@@ -199,6 +217,14 @@ html
                     font-size: 1.625rem
                     font-weight: 700
                     padding-bottom: 30px
+                    @media screen and (max-width: 1880px)
+                        max-width: 700px
+                    @media screen and (max-width: 1500px)
+                        max-width: 581px
+                    @media screen and (max-width: 1000px)
+                        max-width: 750px
+                    @media screen and (max-width: 850px)
+                        max-width: 648px
                 &-desc
                     font-size: 1.1rem
                     max-width: 861px
@@ -206,7 +232,14 @@ html
                         max-width: 700px
                     @media screen and (max-width: 1500px)
                         max-width: 581px
-
+                    @media screen and (max-width: 1000px)
+                        max-width: 750px
+                    @media screen and (max-width: 850px)
+                        max-width: 648px
+                    @media screen and (max-width: 700px)
+                        max-width: 400px
+                    @media screen and (max-width: 415px)
+                        max-width: 315px
     &__service
         display: flex
         flex-direction: column
@@ -232,6 +265,10 @@ html
                 max-width: 31%
                 padding: 0 30px 87px 0
                 flex-wrap: wrap
+                @media screen and (max-width: 1100px)
+                    padding: 0 10px 87px 0
+                @media screen and (max-width: 850px)
+                    max-width: 50%
                 &-item:nth-of-type(3n)
                     padding-right: 0   
                 &-foto img
@@ -239,23 +276,36 @@ html
                         height: auto
                         padding-bottom: 30px
                 &-title
-                    font-size: 1.4rem
-                    color: $active-regular
                     padding-bottom: 15px
                     @media screen and (max-width: 1170px)
                         max-width: 250px
+                    @media screen and (max-width: 850px)
+                        max-width: 294px
+                    a
+                        font-size: 1.4rem
+                        font-weight: 700
+                        color: $active-regular
+                        transition: all ease-in-out 0.3s
+                        text-decoration: none
+                        &:hover
+                            color: $accent-pink
+                        
                 &-desc
                     font-size: 1rem
                     color: $grey-mainnav
                     max-width: 493px
                     line-height: 26px
+                    padding-top: 15px
                     @media screen and (max-width: 1450px)
                         max-width: 350px
                     @media screen and (max-width: 1250px)
                         max-width: 300px
                     @media screen and (max-width: 1170px)
-                        max-width: 250px
-    
+                        max-width: 230px
+                    @media screen and (max-width: 1050px)
+                        max-width: 261px
+                    @media screen and (max-width: 850px)
+                        max-width: 294px
     &__slider
         display: flex
         justify-content: center
@@ -353,6 +403,8 @@ html
                         border-radius: 0
                 img 
                     max-width: 200px
+                @media screen and (max-width: 850px)
+                    width: 33.3333%
     &__articles
         display: flex
         flex-direction: column
@@ -374,7 +426,7 @@ html
             -webkit-text-fill-color: transparent
             background-clip: text
             text-fill-color: transparent
-            padding-bottom: 30px            
+            padding-bottom: 30px        
         &-card
             display: flex
             justify-content: space-between
@@ -391,7 +443,6 @@ html
                     &:nth-of-type(3)
                         max-width: 648px
                         display: flex
-                        justify-content: center
                 &-wrapper
                     padding: 30px
                 &-foto img
@@ -409,25 +460,24 @@ html
                         max-width: 281px
                         height: 200px
                         object-fit: cover 
-                    @media screen and (max-width: 1000px)
-                        &:nth-of-type(3)
-                            max-width: 648px
-                            height: 200px
-                            object-fit: cover 
                 &-text
-                    font-weight: 700
-                    font-size: 1rem
-                    line-height: 19.5px
                     padding-bottom: 15px
                     max-width: 453px
-                    color:$active-regular
+                    a
+                        font-weight: 700
+                        font-size: 1rem
+                        line-height: 19.5px
+                        color:$active-regular
+                        transition: all ease-in-out 0.3s
+                        text-decoration: none
+                        &:hover
+                            color: $accent-pink 
                     @media screen and (max-width: 1900px)    
                         max-width: 390px 
                     @media screen and (max-width: 1700px)
                         max-width: 360px
                     @media screen and (max-width: 1450px)
-                        max-width: 220px
-                        
+                        max-width: 220px 
                 &-data
                     letter-spacing: 1px
                     font-size: 0.725rem
@@ -506,11 +556,12 @@ html
         padding-bottom: 30px
         &-dotted
             padding: 0 10px 7px
-        &-phone
+        &-phone a
             font-size: 1rem
             font-weight: 700
             line-height: 19.5px
             color: $main-blue-grey
+            text-decoration: none
         &-mail
             font-size: 1rem
             font-weight: 700
@@ -518,7 +569,89 @@ html
             a
                 color: $active-regular
                 text-decoration: none
+                transition: all ease-in-out 0.3s
+                &:hover
+                    color:$accent-pink
 .content 
     display: none
     &.active 
         display: block
+.buttonWrapper
+    display: flex
+    flex-direction: column
+    align-items: flex-end
+    padding: 0
+    @media screen and (max-width: 1000px)
+        overflow-x: scroll
+        display: flex
+        flex-direction: none
+        flex-direction: row
+        max-width: 900px
+        height: auto
+        &::-webkit-scrollbar 
+            width: 10px
+        &::-webkit-scrollbar-track 
+            background: $main-blue
+        &::-webkit-scrollbar-thumb 
+            background-color: $main-blue-grey
+            border: 3px solid $main-blue
+            transition: all ease-in-out 0.3s
+            &:hover
+                background-color: $main-grey
+    @media screen and (max-width: 901px)
+        max-width: 750px
+    @media screen and (max-width: 751px)
+        max-width: 500px
+    @media screen and (max-width: 501px)
+        max-width: 300px
+    button
+        border: none
+        background: transparent
+.popup 
+    position: fixed
+    width: 100%
+    height: 100%
+    background-color: rgba(0, 0, 0, 0.3294117647)
+    top: 0
+    left: 0
+    z-index: 1
+    opasity: 0
+    visibility: hidden
+    &:target 
+        opasity: 1
+        visibility: visible
+    &__area 
+        position: absolute
+        width: 100%
+        height: 100%
+        top: 0
+        left: 0
+    &__body 
+        min-height: 100%
+        display: flex
+        align-items: center
+        justify-content: center
+        &-content 
+            background-color: #fff
+            color: black
+            mx-width: 800px
+            padding: 30px 20px
+            position: relative
+            &-close 
+                position: absolute
+                right: 10px
+                top: 10px
+                font-size: 1.4rem
+                font-weight: 700
+                color: #000
+                text-decoration: none
+body::-webkit-scrollbar 
+    width: 10px
+body::-webkit-scrollbar-track 
+    background: $main-blue
+body::-webkit-scrollbar-thumb 
+    background-color: $main-blue-grey
+    border: 3px solid $main-blue
+    transition: all ease-in-out 0.3s
+    &:hover
+        background-color: $main-grey
