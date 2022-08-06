@@ -12,6 +12,8 @@ html
     margin: 0 auto
     @media screen and (max-width: 1700px)
         padding: 0 60px
+    @media screen and (max-width: 700px)
+        padding: 0 15px
 .container2 
     max-width: 1920px
     padding: 0 100px
@@ -24,109 +26,142 @@ html
     background: -webkit-linear-gradient(231deg, rgba(50,50,100,1) 0%, rgba(50,50,100,1) 50%, rgba(100,62,114,1) 100%)
     background: linear-gradient(231deg, rgba(50,50,100,1) 0%, rgba(50,50,100,1) 50%, rgba(100,62,114,1) 100%)
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#323264",endColorstr="#643e72",GradientType=1)
-    border-radius: 0 0 1% 1% 
+    border-radius: 0 0 12px 12px 
     box-shadow: 0px 17px 0px -7px #cacadb, 0px 39px 1px -17px #e7e7f2
 .header 
     position: relative
     height: 92vh
+    @media screen and (max-width: 1700px)
+        height: 115vh 
+    @media screen and (max-width: 1000px)
+        height: 142vh
+    &.container1
+        padding: 0
+    &__h 
+        display: flex
+        justify-content: center
+        position: relative
+        top: -130px
+        @media screen and (max-width: 1000px)
+            top: -222px
+        img 
+            position: absolute
+            height: 95vh
+            width: auto
+            @media screen and (max-width: 1700px)
+                height: 118vh
+            @media screen and (max-width: 1000px)
+                height: 146vh
+            @media screen and (max-width: 700px)
+                display: block
+                width: 112%
+                object-fit: cover
+        h1
+            height: 96vh
+            position: relative
+            display: flex
+            align-items: center
+            font-size: 1.9rem
+            font-weight: 700
+            justify-content: center
+            color: white
+            @media screen and (min-width: 2200px)
+                font-size: 2.5rem
+            @media screen and (max-width: 1700px)
+                height: 118vh
+            @media screen and (max-width: 1000px)
+                height: 146vh
+            
     &__team 
         display: flex
-        justify-content: space-between
-        align-items: flex-start
+        flex-direction: column
         color: white  
         @media screen and (max-width: 850px)
-            max-width: 648px  
-        &-logo 
-            padding-top: 50px
-            display: flex
-            z-index: 1
-        &-h 
-            display: flex
-            justify-content: center
-            margin: 0 auto
-            img 
-                position: absolute
-                padding-left: 400px
-                height: 95vh
-                width: auto
-            h1
-                height: 96vh
-                left: 38%
-                position: absolute
-                display: flex
-                align-items: center
-                font-size: 1.9rem
-                font-weight: 700
-                justify-content: center
-                @media screen and (min-width: 2200px)
-                    left: 36%
-                    font-size: 2.5rem
-                @media screen and (max-width: 1600px)
-                    left: 35%
-                @media screen and (max-width: 1024px)
-                    left: 33%
-        &-right 
-            display: flex
-            align-items: flex-end
             flex-direction: column
+        &-top
+            display: flex
+            justify-content: space-between
+            @media screen and (max-width: 1000px)
+                flex-direction: column
+            &-logo 
+                padding-top: 50px
+                display: flex
+                z-index: 1   
+                @media screen and (max-width: 1000px)
+                    padding-top: 30px
+                    padding-bottom: 30px            
+            &-right 
+                display: flex
+                z-index: 1
+                @media screen and (max-width: 1000px)
+                    order: -1
+                &-group
+                    display: flex
+                    align-items: center
+                    padding-top: 55px
+                    @media screen and (max-width: 700px)
+                        background-color: rgba(245, 245, 250, 0.2)
+                        padding-top: 15px
+                        display: flex
+                        justify-content: space-between
+                    &-leng a:last-of-type
+                        padding-right: 11px
+                        margin-right: 6px
+                    &-leng a 
+                        border: 1px solid transparent
+                        padding: 6px 7px
+                        border-radius: 8px
+                        transition: all ease-in-out 0.3s
+                    &-leng a:hover 
+                        border: 1px solid $accent-pink
+                        background-color: $accent-pink
+                    &-leng ul
+                        display: flex
+                        a 
+                            text-decoration: none
+                            color: white
+                            font-weight: 700
+                            font-size: 0.825rem
+                            padding-left: 11px
+                    &-dotted 
+                        padding: 0 10px 7px   
+                        @media screen and (max-width: 700px)
+                            display: none             
+                    &-number 
+                        a 
+                            padding-right: 5px
+                            font-weight: 700
+                            font-size: 1rem
+                            color: white
+                            text-decoration: none
+                    &-city 
+                        padding-right: 5px
+                        font-size: 1rem
+                        @media screen and (max-width: 700px)
+                            display: none
+                    &-facebook 
+                        display: block
+                        @media screen and (max-width: 700px)
+                            padding-right: 15px
+                            display: none
+        &-list 
+            display: flex
+            justify-content: flex-end
             z-index: 1
-        
-            &-group
+            @media screen and (max-width: 1000px)
+                justify-content: flex-start
+                margin-left: -15px
+            ul 
                 display: flex
-                align-items: center
-                padding-top: 55px
-            
-                &-leng a:last-of-type
-                    padding-right: 11px
-                    margin-right: 6px
-                &-leng a 
-                    border: 1px solid transparent
-                    padding: 6px 7px
-                    border-radius: 8px
-                    transition: all ease-in-out 0.3s
-                &-leng a:hover 
-                    border: 1px solid $accent-pink
-                    background-color: $accent-pink
-                &-leng ul
-                    display: flex
-                    a 
-                        text-decoration: none
-                        color: white
-                        font-weight: 700
-                        font-size: 0.825rem
-                        padding-left: 11px
-                &-dotted 
-                    padding: 0 10px 7px                
-                &-number a 
-                    padding-right: 5px
-                    font-weight: 700
-                    font-size: 1rem
-                    color: white
-                    text-decoration: none
-                &-city 
-                    padding-right: 5px
-                    font-size: 1rem
-                
-                &-facebook 
-                    display: block
-                
-            &-list 
-                display: flex
-                padding-top: 19px
-            
-                ul 
-                    display: flex
-                
-                a 
-                    text-decoration: none
-                    color: white
-                    padding-left: 15px
-                    font-weight: 700
-                    font-size: 1rem
-                    transition: all ease-in-out 0.3s
-                a:hover 
-                    color: $accent-pink
-                
+            a 
+                text-decoration: none
+                color: white
+                padding-left: 15px
+                font-weight: 700
+                font-size: 1rem
+                transition: all ease-in-out 0.3s
+            a:hover 
+                color: $accent-pink
     &__arrow  
         position: absolute
         left: 0 
@@ -145,8 +180,6 @@ html
             transition: all ease-in-out 0.3s
             &:hover
                 color: $accent-pink
-
-
 .main
     &__nav
         display: flex
@@ -179,19 +212,11 @@ html
                 @media screen and (max-width: 1000px)
                     flex-direction: row
                     white-space: nowrap
+                @media screen and (max-width: 760px)       
+                    font-size: 2rem
                 &:hover
                     color: #F0145A 
                     background: none
-                &:first-of-type
-                    display: flex
-                    flex-direction: column
-                    font-size: 2.4rem
-                    font-weight: 700
-                    background: linear-gradient(90.13deg, #EF8080 0.84%, #F0145A 99.96%)
-                    -webkit-background-clip: text
-                    -webkit-text-fill-color: transparent
-                    text-decoration: none
-                    transition: all ease-in-out 0.3s
         &-border
             border-right: 4px solid $grey-mainnav
             padding-top: 30px
@@ -204,6 +229,12 @@ html
                 margin-top: 60px
                 height: 0
                 padding-top: 60px
+            @media screen and (max-width: 800px)
+                width: 550px    
+            @media screen and (max-width: 600px)
+                width: 400px
+            @media screen and (max-width: 415px)
+                width: 315px
         &-right
             display: flex
             flex-direction: column
@@ -255,6 +286,10 @@ html
             font-weight: 700
             color: #F0145A
             padding-bottom: 60px
+            @media screen and (max-width: 740px)
+                padding-bottom: 30px
+            @media screen and (max-width: 760px)       
+                font-size: 2rem
         &-group
             display: flex
             justify-content: space-between
@@ -269,6 +304,10 @@ html
                     padding: 0 10px 87px 0
                 @media screen and (max-width: 850px)
                     max-width: 50%
+                @media screen and (max-width: 740px)
+                    max-width: 100%
+                    margin: 0 auto
+                    padding-bottom: 30px
                 &-item:nth-of-type(3n)
                     padding-right: 0   
                 &-foto img
@@ -281,6 +320,8 @@ html
                         max-width: 250px
                     @media screen and (max-width: 850px)
                         max-width: 294px
+                    @media screen and (max-width: 740px)
+                        max-width: 315px
                     a
                         font-size: 1.4rem
                         font-weight: 700
@@ -289,7 +330,6 @@ html
                         text-decoration: none
                         &:hover
                             color: $accent-pink
-                        
                 &-desc
                     font-size: 1rem
                     color: $grey-mainnav
@@ -306,6 +346,7 @@ html
                         max-width: 261px
                     @media screen and (max-width: 850px)
                         max-width: 294px
+                        padding-left: 0
     &__slider
         display: flex
         justify-content: center
@@ -314,6 +355,8 @@ html
         margin-top: 60px
         border: 1px solid transparent
         border-radius: 20px
+        @media screen and (max-width: 1000px)
+            flex-direction: column
         &-man
             height: auto
             border-radius: 1% 0 0 1%
@@ -329,6 +372,23 @@ html
                     width: 400px
                     height: 528px
                     object-fit: cover 
+                @media screen and (max-width: 1000px)
+                    width: 648px
+                    height: 500px
+                    object-fit: cover
+                    border-radius: 0
+                @media screen and (max-width: 767px)
+                    width: 500px
+                    height: 500px
+                    object-fit: cover
+                @media screen and (max-width: 510px)
+                    width: 360px
+                    height: 500px
+                    object-fit: cover
+                @media screen and (max-width: 375px)
+                    width: 315px
+                    height: 500px
+                    object-fit: cover
         &-card
             display: flex
             flex-direction: column
@@ -352,6 +412,8 @@ html
                 padding-bottom: 60px
                 max-width: 1140px
                 line-height: 46.32px
+                @media screen and (max-width: 760px)       
+                    font-size: 2rem
             &-name
                 color: $grey-text
                 font-size: 1rem
@@ -405,10 +467,26 @@ html
                     max-width: 200px
                 @media screen and (max-width: 850px)
                     width: 33.3333%
+                @media screen and (max-width: 650px)
+                    width: 100%
+                    &:nth-of-type(7)
+                        display: none
+                    &:nth-of-type(8)
+                        display: none
+                    &:nth-of-type(9)
+                        display: none
+                    &:nth-of-type(10)
+                        display: none
+                    &:nth-of-type(11)
+                        display: none
+                    &:nth-of-type(12)
+                        display: none
     &__articles
         display: flex
         flex-direction: column
         padding-top: 30px
+        @media screen and (max-width: 700px)
+            justify-content: center
         &-publication
             font-size: 0.825rem
             font-weight: 700
@@ -426,12 +504,17 @@ html
             -webkit-text-fill-color: transparent
             background-clip: text
             text-fill-color: transparent
-            padding-bottom: 30px        
+            padding-bottom: 30px 
+            @media screen and (max-width: 760px)       
+                font-size: 2rem
         &-card
             display: flex
             justify-content: space-between
             padding-bottom: 30px
             flex-wrap: wrap
+            @media screen and (max-width: 760px)
+                flex-direction: column
+                align-items: center
             &-group
                 display: flex
                 flex-direction: column
@@ -439,15 +522,27 @@ html
                 border-radius: 8px
                 border: 1px solid transparent
                 margin-bottom: 30px
+                    border-radius: 12px
                 @media screen and (max-width: 1000px)
                     &:nth-of-type(3)
-                        max-width: 648px
+                        display: none
+                @media screen and (max-width: 760px)
+                    &:nth-of-type(3)
                         display: flex
                 &-wrapper
                     padding: 30px
+                    @media screen and (max-width: 1900px)    
+                        max-width: 390px 
+                    @media screen and (max-width: 1700px)
+                        max-width: 360px
+                    @media screen and (max-width: 1450px)
+                        max-width: 220px
+                    @media screen and (max-width: 760px)
+                        max-width: 255px
                 &-foto img
                     max-width: 513px
                     height: auto
+                    border-radius: 12px 12px 0 0
                     @media screen and (max-width: 1900px)    
                         max-width: 450px 
                     @media screen and (max-width: 1700px)
@@ -457,9 +552,9 @@ html
                         height: 200px
                         object-fit: cover 
                     @media screen and (max-width: 1250px)
-                        max-width: 281px
-                        height: 200px
-                        object-fit: cover 
+                        max-width: 281px 
+                    @media screen and (max-width: 760px)
+                        max-width: 315px
                 &-text
                     padding-bottom: 15px
                     max-width: 453px
@@ -472,12 +567,6 @@ html
                         text-decoration: none
                         &:hover
                             color: $accent-pink 
-                    @media screen and (max-width: 1900px)    
-                        max-width: 390px 
-                    @media screen and (max-width: 1700px)
-                        max-width: 360px
-                    @media screen and (max-width: 1450px)
-                        max-width: 220px 
                 &-data
                     letter-spacing: 1px
                     font-size: 0.725rem
@@ -490,92 +579,195 @@ html
                     border-top: 4px solid $grey-separator
                     padding-bottom: 15px
                     max-width: 453px
-                    @media screen and (max-width: 1900px)    
-                        max-width: 390px 
-                    @media screen and (max-width: 1700px)
-                        max-width: 360px
-                    @media screen and (max-width: 1450px)
-                        max-width: 220px
                 &-desc
                     font-size: 0.825rem
                     font-weight: 400
                     line-height: 22px
                     overflow: hidden
                     max-width: 453px
-                    @media screen and (max-width: 1900px)    
-                        max-width: 390px 
-                    @media screen and (max-width: 1700px)
-                        max-width: 360px
-                    @media screen and (max-width: 1450px)
-                        max-width: 220px
+                    
+        &-media
+            display: none
+            @media screen and (max-width: 1000px)   
+                display: flex
+                justify-content: center
+                padding-bottom: 30px
+                flex-wrap: wrap
+            &-group
+                @media screen and (max-width: 1000px)  
+                    display: flex
+                    flex-direction: column
+                    background-color: white
+                    border-radius: 12px
+                    border: 1px solid transparent
+                    margin-bottom: 30px
+                &-wrapper
+                    @media screen and (max-width: 1000px)  
+                        padding: 30px
+                        max-width: 588px
+                &-foto img
+                    @media screen and (max-width: 1000px)  
+                        width: 648px
+                        height: auto 
+                &-text
+                    @media screen and (max-width: 1000px)  
+                        padding-bottom: 15px
+                    a
+                        @media screen and (max-width: 1000px)  
+                            font-weight: 700
+                            font-size: 1rem
+                            line-height: 19.5px
+                            color:$active-regular
+                            transition: all ease-in-out 0.3s
+                            text-decoration: none
+                        &:hover
+                            @media screen and (max-width: 1000px)  
+                                color: $accent-pink  
+                &-data
+                    @media screen and (max-width: 1000px)  
+                        letter-spacing: 1px
+                        font-size: 0.725rem
+                        font-weight: 700
+                        color: $grey-text
+                        padding-bottom: 15px
+                        text-transform: uppercase
+                &-border
+                    @media screen and (max-width: 1000px)  
+                        color: $grey-separator
+                        border-top: 4px solid $grey-separator
+                        padding-bottom: 15px
+                &-desc
+                    @media screen and (max-width: 1000px)  
+                        font-size: 0.825rem
+                        font-weight: 400
+                        line-height: 22px
+                        overflow: hidden
+            @media screen and (max-width: 760px)
+                display: none
     &__border
         border-top: 2px solid $grey-separator
         padding-bottom: 30px
+.swiper-slide
+    height: 0
+.swiper-slide
+    height: 410px
+    @media screen and (max-width: 1729px)
+        height: 460px
+    @media screen and (max-width: 1700px)
+        height: 410px
+    @media screen and (max-width: 1530px)
+        height: 460px 
+    @media screen and (max-width: 1414px)
+        height: 640px 
+    @media screen and (max-width: 1000px)
+        height: 1000px
+    @media screen and (max-width: 792px)
+        height: 1050px
+    @media screen and (max-width: 760px)
+        height: 995px
+    @media screen and (max-width: 692px)
+        height: 1040px
+    @media screen and (max-width: 608px)
+        height: 1090px
+    @media screen and (max-width: 569px)
+        height: 1130px
 .footer
     display: flex
-    flex-direction: column
+    justify-content: space-between
+    @media screen and (max-width: 800px)
+        flex-direction: column
     &__nav
         display: flex
-        justify-content: space-between
+        flex-direction: column
         padding-bottom: 21px
+        @media screen and (max-width: 800px)
+            flex-direction: column
+            justify-content: center
+            padding-bottom: 0
         &-left
             display: flex
             align-items: center
             justify-content: flex-start
+            padding-bottom: 21px
+            @media screen and (max-width: 800px)
+                flex-direction: column
+                align-items: center
+                padding-bottom: 0
             &-city
                 font-size: 1rem
                 font-weight: 400
                 line-height: 19.5px
+                @media screen and (max-width: 800px)
+                    padding-bottom: 10px
             &-dotted
                 padding: 0 10px 7px
+                @media screen and (max-width: 800px)
+                    display: none
             &-map
                 letter-spacing: 1px
                 font-weight: 700
                 line-height: 14.63px
                 font-size: 0.7rem
                 text-transform: uppercase
+                @media screen and (max-width: 800px)
+                    padding-bottom: 21px
                 a
                     color: $active-regular
                     text-decoration: none
                     transition: all ease-in-out 0.3s
                     &:hover
                         color:$accent-pink
-        &-right
+        &-bottom
             display: flex
-            align-items: flex-end
-            a
-                color:$grey-text
-                text-decoration: none
+            justify-content: flex-start
+            align-items: center
+            padding-bottom: 30px
+            row-gap: 10px
+            @media screen and (max-width: 800px)
+                flex-direction: column
+                align-items: center
+                padding-bottom: 0
+            &-dotted
+                padding: 0 10px 7px
+                @media screen and (max-width: 800px)
+                    display: none
+            &-phone a
                 font-size: 1rem
+                font-weight: 700
                 line-height: 19.5px
-                font-weight: 400
-    &__bottom
-        display: flex
-        justify-content: flex-start
-        align-items: center
-        padding-bottom: 30px
-        &-dotted
-            padding: 0 10px 7px
-        &-phone a
-            font-size: 1rem
-            font-weight: 700
-            line-height: 19.5px
-            color: $main-blue-grey
-            text-decoration: none
-        &-mail
-            font-size: 1rem
-            font-weight: 700
-            line-height: 19.5px
-            a
-                color: $active-regular
+                color: $main-blue-grey
                 text-decoration: none
-                transition: all ease-in-out 0.3s
-                &:hover
-                    color:$accent-pink
+            &-mail
+                font-size: 1rem
+                font-weight: 700
+                line-height: 19.5px
+                @media screen and (max-width: 800px)
+                    padding-bottom: 30px
+                a
+                    color: $active-regular
+                    text-decoration: none
+                    transition: all ease-in-out 0.3s
+                    &:hover
+                        color:$accent-pink
+    &__right
+        display: flex
+        @media screen and (max-width: 800px)
+            flex-direction: column
+            align-items: center
+        a
+            color: $grey-text
+            text-decoration: none
+            font-size: 1rem
+            line-height: 19.5px
+            font-weight: 400
 .content 
     display: none
     &.active 
         display: block
+.active:focus
+    background: linear-gradient(90.13deg, #EF8080 0.84%, #F0145A 99.96%)
+    -webkit-background-clip: text
+    -webkit-text-fill-color: transparent
 .buttonWrapper
     display: flex
     flex-direction: column
