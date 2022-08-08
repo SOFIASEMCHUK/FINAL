@@ -165,6 +165,7 @@ html {
   max-width: 1920px;
   padding: 0 160px;
   margin: 0 auto;
+  z-index: 1;
 }
 
 @media screen and (max-width: 1700px) {
@@ -213,10 +214,11 @@ html {
     height: 142vh;
   }
 }
-.header.container1 {
-  padding: 0;
+@media screen and (max-width: 1000px) {
+  .header.container1 {
+    margin: 0;
+  }
 }
-
 .header__h {
   display: flex;
   justify-content: center;
@@ -248,7 +250,6 @@ html {
 @media screen and (max-width: 700px) {
   .header__h img {
     display: block;
-    width: 112%;
     object-fit: cover;
   }
 }
@@ -379,6 +380,11 @@ html {
   font-size: 1rem;
   color: white;
   text-decoration: none;
+  transition: all ease-in-out 0.3s;
+}
+
+.header__team-top-right-group-number a:hover {
+  color: #F0145A;
 }
 
 .header__team-top-right-group-city {
@@ -393,6 +399,14 @@ html {
 }
 .header__team-top-right-group-facebook {
   display: block;
+}
+
+.header__team-top-right-group-facebook img {
+  transition: all ease-in-out 0.3s;
+}
+
+.header__team-top-right-group-facebook img:hover {
+  box-shadow: 0px 3px 43px 0px black;
 }
 
 @media screen and (max-width: 700px) {
@@ -428,6 +442,14 @@ html {
 
 .header__team-list a:hover {
   color: #F0145A;
+}
+
+.header__team-list li:after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: transparent;
 }
 
 .header__arrow {
@@ -477,20 +499,6 @@ html {
     align-items: none;
   }
 }
-.main__nav-left {
-  padding-left: 130px;
-}
-
-@media screen and (max-width: 1880px) {
-  .main__nav-left {
-    padding-left: 60px;
-  }
-}
-@media screen and (max-width: 1500px) {
-  .main__nav-left {
-    padding-left: 0;
-  }
-}
 .main__nav-left-tab {
   display: flex;
   flex-direction: column;
@@ -508,6 +516,7 @@ html {
   .main__nav-left-tab {
     flex-direction: row;
     white-space: nowrap;
+    padding-bottom: 60px;
   }
 }
 @media screen and (max-width: 760px) {
@@ -521,43 +530,21 @@ html {
 }
 
 .main__nav-border {
-  border-right: 4px solid #FFFFFF;
+  border-right: 4px solid rgba(255, 255, 255, 0.2980392157);
   padding-top: 30px;
   height: 303px;
-  padding-left: 50px;
 }
 
 @media screen and (max-width: 1000px) {
   .main__nav-border {
-    border-top: 4px solid #FFFFFF;
-    border-right: none;
-    width: 648px;
-    margin-top: 60px;
+    border: none;
     height: 0;
-    padding-top: 60px;
-  }
-}
-@media screen and (max-width: 800px) {
-  .main__nav-border {
-    width: 550px;
-  }
-}
-@media screen and (max-width: 600px) {
-  .main__nav-border {
-    width: 400px;
-  }
-}
-@media screen and (max-width: 415px) {
-  .main__nav-border {
-    width: 315px;
   }
 }
 .main__nav-right {
   display: flex;
   flex-direction: column;
   color: #FFFFFF;
-  padding-left: 50px;
-  margin: 0 auto;
 }
 
 @media screen and (max-width: 1300px) {
@@ -584,6 +571,7 @@ html {
 @media screen and (max-width: 1000px) {
   .main__nav-right-tab-title {
     max-width: 750px;
+    padding-top: 60px;
   }
 }
 @media screen and (max-width: 850px) {
@@ -594,6 +582,7 @@ html {
 .main__nav-right-tab-desc {
   font-size: 1.1rem;
   max-width: 861px;
+  line-height: 30px;
 }
 
 @media screen and (max-width: 1880px) {
@@ -633,9 +622,11 @@ html {
 
 .main__service-services h3 {
   font-size: 0.85rem;
-  color: #B3B3BA;
+  font-weight: 700;
+  color: #24A3FF;
   transition: all ease-in-out 0.3s;
   padding-bottom: 10px;
+  text-transform: uppercase;
 }
 
 .main__service-services h3:hover {
@@ -846,6 +837,13 @@ html {
   color: #24A3FF;
   padding-bottom: 5px;
   padding-top: 17px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.main__slider-card-team p span {
+  font-size: 1.3rem;
 }
 
 .main__slider-card-team:hover {
@@ -1248,63 +1246,68 @@ html {
 }
 
 .swiper-slide {
-  height: 0;
-}
-
-.swiper-slide {
-  height: 410px;
+  height: 410px !important;
 }
 
 @media screen and (max-width: 1729px) {
   .swiper-slide {
-    height: 460px;
+    height: 460px !important;
   }
 }
 @media screen and (max-width: 1700px) {
   .swiper-slide {
-    height: 410px;
+    height: 410px !important;
   }
 }
 @media screen and (max-width: 1530px) {
   .swiper-slide {
-    height: 460px;
+    height: 460px !important;
   }
 }
 @media screen and (max-width: 1414px) {
   .swiper-slide {
-    height: 640px;
+    height: 640px !important;
   }
 }
 @media screen and (max-width: 1000px) {
   .swiper-slide {
-    height: 1000px;
+    height: 1000px !important;
   }
 }
 @media screen and (max-width: 792px) {
   .swiper-slide {
-    height: 1050px;
+    height: 1050px !important;
   }
 }
 @media screen and (max-width: 760px) {
   .swiper-slide {
-    height: 995px;
+    height: 995px !important;
   }
 }
 @media screen and (max-width: 692px) {
   .swiper-slide {
-    height: 1040px;
+    height: 1040px !important;
   }
 }
 @media screen and (max-width: 608px) {
   .swiper-slide {
-    height: 1090px;
+    height: 1090px !important;
   }
 }
 @media screen and (max-width: 569px) {
   .swiper-slide {
-    height: 1130px;
+    height: 1130px !important;
   }
 }
+.swiper .swiper-pagination .swiper-pagination-bullet {
+  height: 16px;
+  width: 16px;
+}
+
+.swiper .swiper-pagination {
+  bottom: 0 !important;
+}
+
 .footer {
   display: flex;
   justify-content: space-between;
@@ -1474,7 +1477,6 @@ html {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  padding: 0;
 }
 
 @media screen and (max-width: 1000px) {
@@ -1485,16 +1487,14 @@ html {
     flex-direction: row;
     max-width: 900px;
     height: auto;
+    margin: 0 auto;
   }
   .buttonWrapper::-webkit-scrollbar {
-    width: 10px;
-  }
-  .buttonWrapper::-webkit-scrollbar-track {
-    background: #323264;
+    height: 4px;
+    margin: 0 auto;
   }
   .buttonWrapper::-webkit-scrollbar-thumb {
-    background-color: #46466E;
-    border: 3px solid #323264;
+    background-color: rgba(255, 255, 255, 0.3294117647);
     transition: all ease-in-out 0.3s;
   }
   .buttonWrapper::-webkit-scrollbar-thumb:hover {
@@ -1506,14 +1506,19 @@ html {
     max-width: 750px;
   }
 }
-@media screen and (max-width: 751px) {
+@media screen and (max-width: 768px) {
   .buttonWrapper {
-    max-width: 500px;
+    max-width: 648px;
   }
 }
 @media screen and (max-width: 501px) {
   .buttonWrapper {
-    max-width: 300px;
+    max-width: 350px;
+  }
+}
+@media screen and (max-width: 375px) {
+  .buttonWrapper {
+    max-width: 315px;
   }
 }
 .buttonWrapper button {
