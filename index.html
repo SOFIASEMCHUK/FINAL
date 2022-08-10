@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>legal</title>
     <link rel="stylesheet" href="css/index.css">
     <link rel="icon" type="image/x-icon" sizes="16x16" href="img/Symbol.png">
     
@@ -16,6 +16,11 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <script src="https://kit.fontawesome.com/48100a65e4.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
+
+    <script
+    src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+    crossorigin="anonymous"></script>
 </head>
 <body>
     <div class="bg-gradient bg-head">
@@ -23,10 +28,23 @@
             <div class="container1">
                 <div class="header__team">
                     <div class="header__team-top">
-                        <div class="header__team-top-logo">
-                            <a href="#">
-                                <img src="img/Logo.png">
-                            </a>
+                        <div class="header__team-top-media">
+                            <div class="header__team-top-media-left">   
+                                <div class="header__team-top-logo">
+                                    <a href="#">
+                                        <img src="img/Logo.png">
+                                    </a>
+                                </div>
+                                <div class="header__team-top-slash">
+                                    <p>/</p>
+                                </div>
+                                <div class="header__team-top-services">
+                                    <p>services</p>
+                                </div>
+                            </div>
+                            <div class="header__team-top-media-burger">
+                                <i class="fa-solid fa-bars"></i>
+                            </div>
                         </div>
                         <div class="header__team-top-right">
                             <div class="header__team-top-right-group">
@@ -68,7 +86,7 @@
                                 </div>
                                 <div class="header__team-top-right-group-facebook">
                                     <a href="#">
-                                        <img src="img/face.svg">
+                                        <img src="img/face.svg" alt="facebook">
                                     </a>
                                 </div>
                             </div>
@@ -174,7 +192,7 @@
                     <div class="container1">
                         <div class="main__service">
                             <div class="main__service-services">
-                                <h3>services &#8250</h3>
+                                <h3>services <span>&#8250</span></h3>
                             </div>
                             <div class="main__service-title">
                                 <h2>What can we do better than others?</h2>
@@ -414,7 +432,7 @@
                 <div class="container1">
                     <div class="main__articles">
                         <div class="main__articles-publication">
-                            <p>publication &#8250</p>
+                            <h3>publication <span>&#8250</span></h3>
                         </div>
                         <div class="main__articles-title">
                             <h2>We have something to tell</h2>
@@ -593,4 +611,11 @@
             element.classList.add("active");
         }
     }
+</script>
+<script>
+    $(document).ready(function() {
+        $('.header__team-top-media-burger').click(function(event) {    
+            $('header__team-list,header__team-top-media-burger').toggleClass('active');
+        })
+    });
 </script>

@@ -36,14 +36,19 @@ html
         height: 115vh 
     @media screen and (max-width: 1000px)
         height: 142vh
-    @media screen and (max-width: 1000px)
-        &.container1
-            margin: 0
+    @media screen and (max-width: 700px)
+        height: 135vh
+        .container1
+            padding: 0
+    @media screen and (max-width: 467px)
+        height: 138vh
+        
     &__h 
         display: flex
         justify-content: center
         position: relative
         top: -130px
+        overflow-x: hidden
         @media screen and (max-width: 1000px)
             top: -222px
         img 
@@ -72,7 +77,8 @@ html
                 height: 118vh
             @media screen and (max-width: 1000px)
                 height: 146vh
-            
+            @media screen and (max-width: 600px)
+                max-width: 145px
     &__team 
         display: flex
         flex-direction: column
@@ -90,7 +96,44 @@ html
                 z-index: 1   
                 @media screen and (max-width: 1000px)
                     padding-top: 30px
-                    padding-bottom: 30px            
+                    padding-bottom: 30px 
+                @media screen and (max-width: 700px)
+                    padding-left: 15px  
+            &-slash
+                display: none
+                @media screen and (max-width: 700px)
+                    display: flex
+                    font-size: 3rem
+                    font-weight: 700
+                    color: $accent-pink
+                    padding: 0 5px 15px
+                    z-index: 1
+            &-services
+                display: none
+                @media screen and (max-width: 700px)
+                    display: block   
+                    z-index: 1
+                    font-size: 2rem
+                    padding-bottom: 15px
+            &-media
+                @media screen and (max-width: 700px)
+                    display: flex
+                    justify-content: space-between
+                    align-items: center
+                &-left
+                    display: flex
+                    align-items: center
+                &-burger
+                    display: none
+                    @media screen and (max-width: 700px)
+                        display: block 
+                        font-size: 1.7rem
+                        padding-right: 22px
+                        padding-bottom: 10px
+                        transition: all ease-in-out 0.3s
+                        &:active
+                            transition: all ease-in-out 0.3s
+                            
             &-right 
                 display: flex
                 z-index: 1
@@ -105,7 +148,12 @@ html
                         padding-top: 15px
                         display: flex
                         justify-content: space-between
+                        flex: 1
+                        padding-top: 17px
+                        padding-bottom: 15px
                     &-leng 
+                        @media screen and (max-width: 700px)
+                            padding-left: 15px
                         a:last-of-type
                             padding-right: 11px
                             margin-right: 6px
@@ -130,6 +178,8 @@ html
                         @media screen and (max-width: 700px)
                             display: none             
                     &-number 
+                        @media screen and (max-width: 700px)
+                            padding-right: 15px
                         a 
                             padding-right: 5px
                             font-weight: 700
@@ -149,7 +199,7 @@ html
                         img
                             transition: all ease-in-out 0.3s
                             &:hover
-                                box-shadow: 0px 3px 43px 0px black
+                                filter: invert(61%) sepia(64%) saturate(951%) hue-rotate(-61deg) brightness(98%) contrast(204%)
                         @media screen and (max-width: 700px)
                             padding-right: 15px
                             display: none
@@ -159,24 +209,72 @@ html
             z-index: 1
             @media screen and (max-width: 1000px)
                 justify-content: flex-start
-                margin-left: -15px
+            @media screen and (max-width: 700px)
+                position: fixed
+                top: -100% 
+                left: 0
+                width: 100%
+                height: 100%
+                background-color: $main-blue
+                align-items: flex-end
+                transition: all ease-in-out 0.3s
+                &.active
+                    top: 0
             ul 
                 display: flex
+                justify-content: space-between
+                gap: 25px
+                @media screen and (max-width: 700px)
+                    display: flex
+                    width: 100%
+                    background-color: white
+                    height: 58%
+                    bottom: 0
+                    flex-direction: column
+                    justify-content: flex-end
+                    gap: 15px
+                    align-items: center
+                    text-align: center
+                    border-radius: 12px 12px 0px 0px
+                    margin: 0 8px
             a 
                 text-decoration: none
                 color: white
-                padding-left: 15px
                 font-weight: 700
                 font-size: 1rem
                 transition: all ease-in-out 0.3s
-            a:hover 
-                color: $accent-pink
-            li:after    
-                content: ""
-                display: block
-                width: 100%
-                height: 2px
-                background: transparent
+                @media screen and (max-width: 700px)
+                    color: $active-regular
+                    &:hover 
+                        color: $accent-pink
+            li
+                @media screen and (max-width: 700px)
+                    border: none
+                    background-color: $grey-bg
+                    border-radius: 12px
+                    padding: 10px 42% 10px
+                    transition: all ease-in-out 0.3s
+                    width: 85px
+                    &:hover
+                        background-color: $grey-separator
+                    @media screen and (max-width: 600px)
+                        padding: 10px 38% 10px
+                    @media screen and (max-width: 400px)
+                        padding: 10px 35% 10px
+                &:hover > a
+                    color: $accent-pink !important
+                &:after
+                    content: ""
+                    display: block
+                    width: 100%
+                    height: 2px
+                    background: transparent
+                    @media screen and (max-width: 700px)
+                        display: none
+                &:hover:after
+                    background: $accent-pink
+                    @media screen and (max-width: 700px)
+                        display: none
     &__arrow  
         position: absolute
         left: 0 
@@ -215,7 +313,7 @@ html
                 font-weight: 700
                 color: #B3B3BA
                 text-decoration: none
-                line-height: 46px
+                line-height: 70px
                 padding: 0 15px 10px 15px
                 text-align: right
                 transition: all ease-in-out 0.3s
@@ -281,6 +379,9 @@ html
             transition: all ease-in-out 0.3s
             padding-bottom: 10px
             text-transform: uppercase
+            span
+                font-size: 1.3rem
+                padding-left: 2px
         &-services h3:hover
                 color: $accent-pink
         &-title h2
@@ -404,7 +505,9 @@ html
                 letter-spacing: 1px
                 text-transform: uppercase
                 font-weight: 700
-                & p span
+                pointer-events: painted
+                transition: all ease-in-out 0.3s
+                p span
                     font-size: 1.3rem
                 &:hover
                     color:$accent-pink
@@ -501,6 +604,8 @@ html
             color: $active-regular
             transition: all ease-in-out 0.3s
             text-transform: uppercase
+            span
+                font-size: 1.3rem
             &:hover
                 color:$accent-pink                
         &-title            
@@ -518,7 +623,7 @@ html
             display: flex
             justify-content: space-between
             padding-bottom: 30px
-            flex-wrap: wrap
+            column-gap: 30px
             @media screen and (max-width: 760px)
                 flex-direction: column
                 align-items: center
@@ -529,39 +634,45 @@ html
                 border-radius: 8px
                 border: 1px solid transparent
                 margin-bottom: 30px
-                    border-radius: 12px
+                border-radius: 12px
+                flex-grow: 1
+                align-items: center
                 @media screen and (max-width: 1000px)
                     &:nth-of-type(3)
                         display: none
                 @media screen and (max-width: 760px)
                     &:nth-of-type(3)
-                        display: flex
+                        display: block
                 &-wrapper
                     padding: 30px
-                    @media screen and (max-width: 1900px)    
-                        max-width: 390px 
-                    @media screen and (max-width: 1700px)
-                        max-width: 360px
-                    @media screen and (max-width: 1450px)
-                        max-width: 220px
-                    @media screen and (max-width: 760px)
-                        max-width: 255px
-                &-foto img
-                    max-width: 513px
-                    height: auto
-                    border-radius: 12px 12px 0 0
-                    @media screen and (max-width: 1900px)    
-                        max-width: 450px 
-                    @media screen and (max-width: 1700px)
-                        max-width: 420px
-                    @media screen and (max-width: 1450px)
-                        max-width: 320px
-                        height: 200px
-                        object-fit: cover 
-                    @media screen and (max-width: 1250px)
-                        max-width: 281px 
-                    @media screen and (max-width: 760px)
-                        max-width: 315px
+                    @media screen and (max-width: 1100px)
+                        max-width: 300px
+                &-foto
+                    text-align: center
+                    & img
+                        max-width: 510px
+                        height: auto
+                        border-radius: 12px 12px 0 0
+                        @media screen and (max-width: 1900px)    
+                            max-width: 450px 
+                        @media screen and (max-width: 1700px)
+                            max-width: 420px
+                        @media screen and (max-width: 1450px)
+                            max-width: 418px
+                            height: 200px
+                            object-fit: cover 
+                        @media screen and (max-width: 1438px)
+                            max-width: 350px
+                        @media screen and (max-width: 1230px)
+                            max-width: 281px 
+                        @media screen and (max-width: 1030px)
+                            max-width: 278px 
+                        @media screen and (max-width: 1020px)
+                            max-width: 272px 
+                        @media screen and (max-width: 1000px)
+                            max-width: 307px
+                        @media screen and (max-width: 760px)
+                            max-width: 315px
                 &-text
                     padding-bottom: 15px
                     max-width: 453px
@@ -737,6 +848,10 @@ html
                 flex-direction: column
                 align-items: center
                 padding-bottom: 0
+            &-facebook
+                transition: all ease-in-out 0.3s
+                &:hover
+                    filter: invert(46%) sepia(64%) saturate(951%) hue-rotate(-61deg) brightness(98%) contrast(204%)
             &-dotted
                 padding: 0 10px 7px
                 @media screen and (max-width: 800px)
@@ -747,6 +862,9 @@ html
                 line-height: 19.5px
                 color: $main-blue-grey
                 text-decoration: none
+                transition: all ease-in-out 0.3s
+                &:hover
+                    color: $accent-pink
             &-mail
                 font-size: 1rem
                 font-weight: 700
@@ -802,6 +920,10 @@ html
         max-width: 750px
     @media screen and (max-width: 768px)
         max-width: 648px
+    @media screen and (max-width: 700px)
+        max-width: 597px
+    @media screen and (max-width: 600px)
+        max-width: 480px
     @media screen and (max-width: 501px)
         max-width: 350px
     @media screen and (max-width: 375px)
