@@ -43,7 +43,7 @@
                                 </div>
                             </div>
                             <div class="header__team-top-media-burger">
-                                <i class="fa-solid fa-bars"></i>
+                                <span></span>
                             </div>
                         </div>
                         <div class="header__team-top-right">
@@ -92,6 +92,7 @@
                             </div>
                         </div>
                     </div>
+                    
                     <div class="header__team-list">
                         <ul>
                             <li>
@@ -615,7 +616,9 @@
 <script>
     $(document).ready(function() {
         $('.header__team-top-media-burger').click(function(event) {    
-            $('header__team-list,header__team-top-media-burger').toggleClass('active');
+            $('.header__team-list').toggleClass('active');
+            $('.header__team-top-media-burger').toggleClass('active');
+            $('body').toggleClass('lock');
         })
     });
 </script>

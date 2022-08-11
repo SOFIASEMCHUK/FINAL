@@ -29,6 +29,9 @@ html
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#323264",endColorstr="#643e72",GradientType=1)
     border-radius: 0 0 12px 12px 
     box-shadow: 0px 17px 0px -7px #cacadb, 0px 39px 1px -17px #e7e7f2
+body
+    .lock
+        overflow: hidden
 .header 
     position: relative
     height: 92vh
@@ -37,12 +40,9 @@ html
     @media screen and (max-width: 1000px)
         height: 142vh
     @media screen and (max-width: 700px)
-        height: 135vh
+        height: 100vh
         .container1
             padding: 0
-    @media screen and (max-width: 467px)
-        height: 138vh
-        
     &__h 
         display: flex
         justify-content: center
@@ -51,6 +51,8 @@ html
         overflow-x: hidden
         @media screen and (max-width: 1000px)
             top: -222px
+        @media screen and (max-width: 700px)
+            top: -171px
         img 
             position: absolute
             height: 95vh
@@ -60,6 +62,7 @@ html
             @media screen and (max-width: 1000px)
                 height: 146vh
             @media screen and (max-width: 700px)
+                height: 111vh
                 display: block
                 object-fit: cover
         h1
@@ -77,8 +80,9 @@ html
                 height: 118vh
             @media screen and (max-width: 1000px)
                 height: 146vh
-            @media screen and (max-width: 600px)
+            @media screen and (max-width: 700px)
                 max-width: 145px
+                height: 111vh
     &__team 
         display: flex
         flex-direction: column
@@ -98,7 +102,11 @@ html
                     padding-top: 30px
                     padding-bottom: 30px 
                 @media screen and (max-width: 700px)
-                    padding-left: 15px  
+                    padding-left: 15px 
+                img
+                    @media screen and (max-width: 700px)
+                        width: 70px
+                        height: auto 
             &-slash
                 display: none
                 @media screen and (max-width: 700px)
@@ -113,7 +121,7 @@ html
                 @media screen and (max-width: 700px)
                     display: block   
                     z-index: 1
-                    font-size: 2rem
+                    font-size: 1.3rem
                     padding-bottom: 15px
             &-media
                 @media screen and (max-width: 700px)
@@ -127,13 +135,51 @@ html
                     display: none
                     @media screen and (max-width: 700px)
                         display: block 
-                        font-size: 1.7rem
-                        padding-right: 22px
-                        padding-bottom: 10px
-                        transition: all ease-in-out 0.3s
-                        &:active
-                            transition: all ease-in-out 0.3s
-                            
+                        position: relative
+                        width: 30px
+                        height: 20px
+                        margin-right: 15px
+                        margin-bottom: 10px
+                        z-index: 3
+                        transition: all ease-in-out 0.3s  
+                        &.active
+                            margin-top: 52vh
+                            margin-left: 91vw
+                            position: fixed
+                            @media screen and (max-width: 500px)
+                                margin-left: 87vw
+                            &:before, &:after
+                                color: black
+                            &::before
+                                transform: rotate(45deg)
+                                top: 9px
+                            &::after
+                                transform: rotate(-45deg)
+                                bottom: 9px
+                            span
+                                transform: scale(0)
+                            &:before, &:after
+                                background-color: $accent-pink
+                        &:before, &:after   
+                            content: ''
+                            background-color: #fff
+                            position: absolute
+                            width: 100%
+                            height: 2px
+                            left: 0
+                            transition: all 0.3s ease 0s
+                        span
+                            position: absolute
+                            background-color: #fff
+                            left: 0
+                            width: 100%
+                            height: 2px
+                            top: 9px
+                            transition: all 0.3s ease 0s
+                        &:before
+                            top: 0
+                        &:after
+                            bottom: 0
             &-right 
                 display: flex
                 z-index: 1
@@ -206,7 +252,7 @@ html
         &-list 
             display: flex
             justify-content: flex-end
-            z-index: 1
+            z-index: 2
             @media screen and (max-width: 1000px)
                 justify-content: flex-start
             @media screen and (max-width: 700px)
@@ -228,7 +274,7 @@ html
                     display: flex
                     width: 100%
                     background-color: white
-                    height: 58%
+                    height: 62%
                     bottom: 0
                     flex-direction: column
                     justify-content: flex-end
@@ -245,6 +291,7 @@ html
                 transition: all ease-in-out 0.3s
                 @media screen and (max-width: 700px)
                     color: $active-regular
+                    font-size: 1.5rem
                     &:hover 
                         color: $accent-pink
             li
@@ -252,15 +299,19 @@ html
                     border: none
                     background-color: $grey-bg
                     border-radius: 12px
-                    padding: 10px 42% 10px
+                    padding: 10px 32% 10px
                     transition: all ease-in-out 0.3s
-                    width: 85px
+                    width: 200px
                     &:hover
                         background-color: $grey-separator
                     @media screen and (max-width: 600px)
-                        padding: 10px 38% 10px
+                        padding: 10px 28% 10px
+                    @media screen and (max-width: 500px)
+                        padding: 10px 23% 10px
                     @media screen and (max-width: 400px)
-                        padding: 10px 35% 10px
+                        padding: 10px 18% 10px
+                    @media screen and (max-width: 350px)
+                        padding: 10px 15% 10px
                 &:hover > a
                     color: $accent-pink !important
                 &:after
@@ -323,6 +374,7 @@ html
                     padding-bottom: 60px
                 @media screen and (max-width: 760px)       
                     font-size: 2rem
+                    padding-bottom: 30px
                 &:hover
                     color: #F0145A 
                     background: none
@@ -353,6 +405,8 @@ html
                         padding-top: 60px
                     @media screen and (max-width: 850px)
                         max-width: 648px
+                    @media screen and (max-width: 760px)
+                        padding-top: 30px    
                 &-desc
                     font-size: 1.1rem
                     max-width: 861px
@@ -408,7 +462,7 @@ html
                 @media screen and (max-width: 850px)
                     max-width: 50%
                 @media screen and (max-width: 740px)
-                    max-width: 100%
+                    width: 100%
                     margin: 0 auto
                     padding-bottom: 30px
                 &-item:nth-of-type(3n)
@@ -474,24 +528,20 @@ html
                 @media screen and (max-width: 1415px)
                     width: 400px
                     height: 528px
-                    object-fit: cover 
                 @media screen and (max-width: 1000px)
                     width: 648px
                     height: 500px
-                    object-fit: cover
-                    border-radius: 0
+                    border-radius: 4% 4% 0 0 
                 @media screen and (max-width: 767px)
                     width: 500px
-                    height: 500px
-                    object-fit: cover
                 @media screen and (max-width: 510px)
                     width: 360px
-                    height: 500px
-                    object-fit: cover
-                @media screen and (max-width: 375px)
-                    width: 315px
-                    height: 500px
-                    object-fit: cover
+                @media screen and (max-width: 400px)
+                    width: 305px
+                    height: 495px
+                @media screen and (max-width: 340px)
+                    width: 285px
+                    height: 480px
         &-card
             display: flex
             flex-direction: column
@@ -523,7 +573,9 @@ html
                 max-width: 1140px
                 line-height: 46.32px
                 @media screen and (max-width: 760px)       
-                    font-size: 2rem
+                    font-size: 1.8rem
+                @media screen and (max-width: 340px)
+                    max-width: 280px
             &-name
                 color: $grey-text
                 font-size: 1rem
@@ -782,11 +834,21 @@ html
     @media screen and (max-width: 760px)
         height: 995px !important
     @media screen and (max-width: 692px)
-        height: 1040px !important
-    @media screen and (max-width: 608px)
-        height: 1090px !important
+        height: 1010px !important
+    @media screen and (max-width: 601px)
+        height: 1050px !important
     @media screen and (max-width: 569px)
-        height: 1130px !important
+        height: 1056px !important
+    @media screen and (max-width: 518px)
+        height: 1100px !important
+    @media screen and (max-width: 479px)
+        height: 1145px !important
+    @media screen and (max-width: 434px)
+        height: 1190px !important
+    @media screen and (max-width: 410px)
+        height: 1240px !important
+    @media screen and (max-width: 386px)
+        height: 1280px !important
 .swiper .swiper-pagination .swiper-pagination-bullet 
     height: 16px
     width: 16px
