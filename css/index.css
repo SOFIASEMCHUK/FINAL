@@ -191,10 +191,25 @@ html {
 }
 .container3 {
   max-width: 1920px;
-  padding: 0 180px;
+  padding: 0 280px;
   margin: 0 auto;
 }
 
+@media screen and (max-width: 1700px) {
+  .container3 {
+    padding: 0 180px;
+  }
+}
+@media screen and (max-width: 1400px) {
+  .container3 {
+    padding: 0 60px;
+  }
+}
+@media screen and (max-width: 700px) {
+  .container3 {
+    padding: 0 30px;
+  }
+}
 .bg-gradient {
   background: rgb(50, 50, 100);
   background: -moz-linear-gradient(231deg, rgb(50, 50, 100) 0%, rgb(50, 50, 100) 50%, rgb(100, 62, 114) 100%);
@@ -213,14 +228,19 @@ body .lock {
   height: 30vh;
 }
 
+@media screen and (min-width: 1400px) {
+  .header1 {
+    height: 22vh;
+  }
+}
 @media screen and (max-width: 1000px) {
   .header1 {
-    height: 55vh;
+    height: 54vh;
   }
 }
 @media screen and (max-width: 700px) {
   .header1 {
-    height: 40vh;
+    height: 30vh;
   }
   .header1 .container1 {
     padding: 0;
@@ -956,6 +976,147 @@ body .lock {
     max-width: 315px;
   }
 }
+.main__first {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 60px;
+}
+
+@media screen and (max-width: 700px) {
+  .main__first {
+    padding-top: 40px;
+  }
+}
+.main__first-foto {
+  justify-content: center;
+  display: flex;
+  padding-bottom: 28px;
+}
+
+.main__first-title {
+  background: linear-gradient(90.13deg, #F0145A 0.84%, #EF8080 99.96%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  font-size: 2.5rem;
+  justify-content: center;
+  padding-bottom: 28px;
+  display: flex;
+  font-weight: 700;
+}
+
+@media screen and (max-width: 700px) {
+  .main__first-title {
+    font-size: 1.59rem;
+  }
+}
+.main__first-desc {
+  font-size: 1.1rem;
+  text-align: center;
+  padding-bottom: 28px;
+  gap: 28px;
+  line-height: 30px;
+  font-weight: 400;
+  color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+}
+
+.main__first-button {
+  justify-content: center;
+  display: flex;
+  font-weight: 700;
+  padding: 19px 30px;
+  margin: 0 auto 60px;
+  width: 208px;
+  border: none;
+  border-radius: 12px;
+  background-color: #24A3FF;
+  color: white;
+  box-shadow: 0px 0px 20px rgba(36, 163, 255, 0.5);
+}
+
+.main__first-button:hover {
+  background-color: rgb(0, 148, 254);
+  box-shadow: 0px 0px 55px rgba(0, 148, 254, 0.5);
+}
+
+.main__first-border {
+  border-top: 4px solid rgba(255, 255, 255, 0.5);
+  padding-bottom: 30px;
+}
+
+.main__first-area {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: white;
+  padding-bottom: 30px;
+}
+
+.main__first-column {
+  display: flex;
+  padding-bottom: 60px;
+  justify-content: space-between;
+  padding-left: 15px;
+}
+
+@media screen and (max-width: 700px) {
+  .main__first-column {
+    flex-direction: column;
+    margin: 0 auto;
+  }
+}
+.main__first-column1 {
+  width: 50%;
+  line-height: 26px;
+  padding-right: 60px;
+  padding-bottom: 30px;
+}
+
+@media screen and (max-width: 700px) {
+  .main__first-column1 {
+    padding-right: 0;
+    width: 100%;
+  }
+}
+.main__first-column1 li {
+  padding-bottom: 8px;
+  font-size: 1.1rem;
+  font-weight: 400;
+  list-style: disc;
+  color: #F0145A;
+}
+
+.main__first-column1 li span {
+  color: white;
+}
+
+.main__first-column2 {
+  width: 50%;
+  gap: 8px;
+  display: flex;
+  line-height: 26px;
+}
+
+@media screen and (max-width: 700px) {
+  .main__first-column2 {
+    width: 100%;
+  }
+}
+.main__first-column2 li {
+  padding-bottom: 8px;
+  font-size: 1.1rem;
+  font-weight: 400;
+  list-style: disc;
+  color: #F0145A;
+}
+
+.main__first-column2 li span {
+  color: white;
+}
+
 .main__service {
   display: flex;
   flex-direction: column;
@@ -1240,7 +1401,6 @@ body .lock {
 
 .main__group {
   padding-top: 60px;
-  margin-bottom: 60px;
 }
 
 @media screen and (max-width: 1700px) {
@@ -1344,6 +1504,7 @@ body .lock {
   display: flex;
   flex-direction: column;
   padding-top: 30px;
+  padding-top: 60px;
 }
 
 @media screen and (max-width: 700px) {
@@ -1613,7 +1774,6 @@ body .lock {
 }
 .main__border {
   border-top: 2px solid #E6E6F0;
-  padding-bottom: 30px;
 }
 
 .swiper-slide {
@@ -1707,6 +1867,7 @@ body .lock {
 .footer {
   display: flex;
   justify-content: space-between;
+  padding-top: 30px;
 }
 
 @media screen and (max-width: 800px) {

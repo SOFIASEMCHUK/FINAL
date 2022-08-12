@@ -23,8 +23,14 @@ html
         padding: 0
 .container3
     max-width: 1920px
-    padding: 0 180px
+    padding: 0 280px
     margin: 0 auto
+    @media screen and (max-width: 1700px)
+        padding: 0 180px
+    @media screen and (max-width: 1400px)
+        padding: 0 60px
+    @media screen and (max-width: 700px)
+        padding: 0 30px
 .bg-gradient 
     background: rgb(50,50,100)
     background: -moz-linear-gradient(231deg, rgba(50,50,100,1) 0%, rgba(50,50,100,1) 50%, rgba(100,62,114,1) 100%)
@@ -38,10 +44,12 @@ body
 .header1 
     position: relative
     height: 30vh
+    @media screen and (min-width: 1400px)
+        height: 22vh
     @media screen and (max-width: 1000px)
-        height: 55vh
+        height: 54vh
     @media screen and (max-width: 700px)
-        height: 40vh
+        height: 30vh
         .container1
             padding: 0
 .header 
@@ -469,6 +477,102 @@ body
                         max-width: 400px
                     @media screen and (max-width: 415px)
                         max-width: 315px
+    &__first
+        display: flex
+        flex-direction: column
+        justify-content: center
+        padding-top: 60px
+        @media screen and (max-width: 700px)
+            padding-top: 40px
+        &-foto
+            justify-content: center
+            display: flex
+            padding-bottom: 28px
+        &-title
+            background: linear-gradient(90.13deg, #F0145A 0.84%, #EF8080 99.96%)
+            -webkit-background-clip: text
+            -webkit-text-fill-color: transparent
+            background-clip: text
+            text-fill-color: transparent
+            font-size: 2.5rem
+            justify-content: center
+            padding-bottom: 28px
+            display: flex
+            font-weight: 700
+            @media screen and (max-width: 700px)
+                font-size: 1.59rem
+        &-desc
+            font-size: 1.1rem
+            text-align: center
+            padding-bottom: 28px
+            gap: 28px
+            line-height: 30px
+            font-weight: 400
+            color: $grey-mainnav
+            display: flex
+            flex-direction: column
+        &-button
+            justify-content: center
+            display: flex
+            font-weight: 700
+            padding: 19px 30px
+            margin: 0 auto 60px
+            width: 208px
+            border: none
+            border-radius: 12px
+            background-color: $active-regular
+            color: white
+            box-shadow: 0px 0px 20px rgba(36, 163, 255, 0.5)
+            &:hover
+                background-color: rgba(0, 148, 254)
+                box-shadow: 0px 0px 55px rgba(0, 148, 254, 0.5)
+        &-border
+            border-top: 4px solid rgba(255, 255, 255, 0.5)
+            padding-bottom: 30px
+        &-area
+            font-size: 1.4rem
+            font-weight: 700
+            color: white
+            padding-bottom: 30px
+        &-column
+            display: flex
+            padding-bottom: 60px
+            justify-content: space-between
+            padding-left: 15px
+            @media screen and (max-width: 700px)
+                flex-direction: column
+                margin: 0 auto
+        &-column1
+            width: 50%
+            line-height: 26px
+            padding-right: 60px
+            padding-bottom: 30px
+            @media screen and (max-width: 700px)
+                padding-right: 0
+                width: 100%
+            li
+                padding-bottom: 8px
+                font-size: 1.1rem
+                font-weight: 400
+                list-style: disc
+                color: $accent-pink
+                span
+                    color: white
+        &-column2
+            width: 50%
+            gap: 8px
+            display: flex
+            line-height: 26px
+            @media screen and (max-width: 700px)
+                width: 100%
+            li
+                padding-bottom: 8px
+                font-size: 1.1rem
+                font-weight: 400
+                list-style: disc
+                color: $accent-pink
+                span
+                    color: white
     &__service
         display: flex
         flex-direction: column
@@ -638,7 +742,6 @@ body
                 padding-bottom: 30px
     &__group
         padding-top: 60px
-        margin-bottom: 60px
         @media screen and (max-width: 1700px)
             margin-bottom: 0
         &-title
@@ -697,6 +800,7 @@ body
         display: flex
         flex-direction: column
         padding-top: 30px
+        padding-top: 60px
         @media screen and (max-width: 700px)
             justify-content: center
         &-publication
@@ -866,7 +970,6 @@ body
                 display: none
     &__border
         border-top: 2px solid $grey-separator
-        padding-bottom: 30px
 .swiper-slide
     height: 410px !important
     @media screen and (max-width: 1729px)
@@ -907,6 +1010,7 @@ body
 .footer
     display: flex
     justify-content: space-between
+    padding-top: 30px
     @media screen and (max-width: 800px)
         flex-direction: column
     &__nav
