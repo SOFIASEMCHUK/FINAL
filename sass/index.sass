@@ -576,18 +576,20 @@ body
     &__service
         display: flex
         flex-direction: column
-        &-services h3
-            font-size: 0.85rem
-            font-weight: 700
-            color: $active-regular
-            transition: all ease-in-out 0.3s
+        &-services 
             padding-bottom: 10px
-            text-transform: uppercase
-            span
-                font-size: 1.3rem
-                padding-left: 2px
-        &-services h3:hover
-                color: $accent-pink
+            a
+                font-size: 0.85rem
+                font-weight: 700
+                color: $active-regular
+                transition: all ease-in-out 0.3s
+                text-transform: uppercase
+                text-decoration: none
+                &:hover
+                    color: $accent-pink
+                span
+                    font-size: 1.3rem
+                    padding-left: 2px
         &-title h2
             font-size: 2.4rem
             font-weight: 700
@@ -597,6 +599,7 @@ body
             background-clip: text
             text-fill-color: transparent
             padding-bottom: 60px
+            text-decoration: none
             @media screen and (max-width: 740px)
                 padding-bottom: 30px
             @media screen and (max-width: 760px)       

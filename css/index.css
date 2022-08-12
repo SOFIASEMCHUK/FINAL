@@ -1122,22 +1122,26 @@ body .lock {
   flex-direction: column;
 }
 
-.main__service-services h3 {
+.main__service-services {
+  padding-bottom: 10px;
+}
+
+.main__service-services a {
   font-size: 0.85rem;
   font-weight: 700;
   color: #24A3FF;
   transition: all ease-in-out 0.3s;
-  padding-bottom: 10px;
   text-transform: uppercase;
+  text-decoration: none;
 }
 
-.main__service-services h3 span {
+.main__service-services a:hover {
+  color: #F0145A;
+}
+
+.main__service-services a span {
   font-size: 1.3rem;
   padding-left: 2px;
-}
-
-.main__service-services h3:hover {
-  color: #F0145A;
 }
 
 .main__service-title h2 {
@@ -1149,6 +1153,7 @@ body .lock {
   background-clip: text;
   text-fill-color: transparent;
   padding-bottom: 60px;
+  text-decoration: none;
 }
 
 @media screen and (max-width: 740px) {
